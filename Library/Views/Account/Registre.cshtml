@@ -1,0 +1,41 @@
+﻿@model ClubClient.Models.Account.TouristModel
+@{
+    ViewBag.Title = "Регистрация";
+}
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @using (Html.BeginForm())
+        {
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>@ViewBag.Title</legend>
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Fio, new { @class = "form-control", placeholder = "ФИО", type = "text" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(x => x.Sex, new[]
+                        {
+                            new SelectListItem {Text = "Мужской", Value = "М"},
+                            new SelectListItem {Text = "Женский", Value = "Ж"}
+                        }, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Birthday, new { @class = "form-control", type = "text" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", placeholder = "89*********", type = "text" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Login, new { @class = "form-control", placeholder = "Логин", type = "text" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "Пароль", type = "password" })
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+                    </div>
+                </fieldset>
+            </form>
+        }
+    </div>
+</div>

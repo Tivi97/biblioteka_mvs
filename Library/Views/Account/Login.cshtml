@@ -1,0 +1,25 @@
+﻿@model ClubClient.Models.Account.AuthModel
+@{
+    ViewBag.Title = "Авторизация";
+}
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @using (Html.BeginForm())
+        {
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>@ViewBag.Title</legend>
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control", placeholder = "Логин", type = "text" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "Пароль", type = "password" })
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                    </div>
+                </fieldset>
+            </form>
+        }
+    </div>
+</div>

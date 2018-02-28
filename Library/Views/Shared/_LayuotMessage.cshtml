@@ -1,0 +1,12 @@
+﻿@if (TempData["message"] != null)
+{
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>@Html.Raw(TempData["message"])</strong>
+            </div>
+        </div>
+    </div>
+}
+
