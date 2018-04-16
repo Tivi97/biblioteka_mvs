@@ -1,4 +1,4 @@
-﻿@model ClubClient.Models.Account.TouristModel
+﻿@model Library.Models.Account.RegistreModel
 @{
     ViewBag.Title = "Регистрация";
 }
@@ -11,19 +11,21 @@
                     <legend>@ViewBag.Title</legend>
                     <div class="form-group">
                         @Html.TextBoxFor(x => x.Fio, new { @class = "form-control", placeholder = "ФИО", type = "text" })
+                    </div>                    
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Birthday, new { @class = "form-control", placeholder = "Дата рождения ДД/ММ/ГГГГ", type = "text" })
                     </div>
                     <div class="form-group">
-                        @Html.DropDownListFor(x => x.Sex, new[]
-                        {
-                            new SelectListItem {Text = "Мужской", Value = "М"},
-                            new SelectListItem {Text = "Женский", Value = "Ж"}
-                        }, new { @class = "form-control" })
+                        @Html.TextBoxFor(x => x.PassportSeries, new { @class = "form-control", placeholder = "Паспорт №1111", type = "text" })
                     </div>
                     <div class="form-group">
-                        @Html.TextBoxFor(x => x.Birthday, new { @class = "form-control", type = "text" })
+                        @Html.TextBoxFor(x => x.PassportKod, new { @class = "form-control", placeholder = "Серия 111 111", type = "text" })
                     </div>
                     <div class="form-group">
-                        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", placeholder = "89*********", type = "text" })
+                        @Html.TextBoxFor(x => x.CertificateCode, new { @class = "form-control", placeholder = "Номер свид. о рождении AA-11111", type = "text" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email", type = "text" })
                     </div>
                     <div class="form-group">
                         @Html.TextBoxFor(x => x.Login, new { @class = "form-control", placeholder = "Логин", type = "text" })
